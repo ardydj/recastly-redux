@@ -163,4 +163,9 @@ var exampleVideoData = [{
   }
 }];
 
-export default exampleVideoData;
+var preloadedData = {
+  currentVideo: exampleVideoData[0],
+  videos: exampleVideoData
+}
+
+export default preloadedData;
