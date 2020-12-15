@@ -1,16 +1,17 @@
 import API_KEY from './../config/youtube.js';
 
 const getYouTubeVideos = (query) => {
+  console.log('YOU MADE IT INTO GETYOUTUBEVIDEOS()', query)
   var options = {
     key: API_KEY,
     query: query
   };
   return (dispatch) => {
     (searchYouTube(options, (videos) => {
-    return {
+    dispatch({
       type: 'Fetched Data',
       payload: videos
-    };
+    });
   }))};
 }
 
@@ -24,7 +25,6 @@ var searchYouTube = ({key, query, max = 5}, callback) => {
     videoEmbeddable: 'true'
   })
     .done(({items}) => {
-      // console.log(items);
       if (callback) {
         callback(items);
       }

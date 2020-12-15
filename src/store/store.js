@@ -7,7 +7,8 @@ import getYouTubeVideos from './../lib/searchYouTube.js';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-store.dispatch(getYouTubeVideos('Funny cats'));
-console.log(store.getState());
+const unsubscribe = store.subscribe(() => {
+  console.log('Store has dispatched:', store.getState());
+})
 
 export default store;

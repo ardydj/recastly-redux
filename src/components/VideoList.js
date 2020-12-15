@@ -1,11 +1,11 @@
 import React from 'react';
 import VideoListEntry from './VideoListEntry.js';
 import store from './../store/store.js';
+import { connect } from 'react-redux';
 
 var VideoList = ({handleVideoListEntryTitleClick}) => {
   let state = store.getState();
   let { videos } = state;
-  console.log('videos:', videos)
 
   return (
     <div className="video-list">
@@ -26,4 +26,8 @@ var VideoList = ({handleVideoListEntryTitleClick}) => {
 //   videos: React.PropTypes.array.isRequired
 // };
 
-export default VideoList;
+const mapStateToProps = state => {
+  return state
+}
+
+export default connect(mapStateToProps)(VideoList);
