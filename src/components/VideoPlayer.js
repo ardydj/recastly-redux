@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 var VideoPlayer = () => {
   let state = store.getState();
-  console.log(state);
   let { currentVideo } = state;
 
   if (currentVideo === undefined) {
