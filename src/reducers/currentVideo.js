@@ -1,7 +1,7 @@
 import Redux from 'redux';
 import preloadedData from './../data/exampleVideoData.js';
 
-var currentVideoReducer = (state = preloadedData.currentVideo, action) => {
+var currentVideoReducer = (state = {}, action) => {
   //TODO: define a reducer for the currentVideo field of our state.
   console.log('currentVideoReducer state and action:', state, action);
   if (action.type === 'Fetched Data') {

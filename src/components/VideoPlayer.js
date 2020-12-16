@@ -3,10 +3,9 @@ import store from './../store/store.js';
 import { connect } from 'react-redux';
 
 var VideoPlayer = () => {
-  let state = store.getState();
-  let { currentVideo } = state;
+  let currentVideo = store.getState().currentVideo;
 
-  if (currentVideo === undefined) {
+  if (currentVideo.videoId === undefined) {
     return (
       <div className="video-player">Please wait...</div>
       )
@@ -25,12 +24,6 @@ var VideoPlayer = () => {
     )
   }
 };
-
-// PropTypes tell other developers what `props` a component expects
-// Warnings will be shown in the console when the defined rules are violated
-// VideoPlayer.propTypes = {
-//   video: React.PropTypes.object.isRequired
-// };
 
 const mapStateToProps = state => {
   return state

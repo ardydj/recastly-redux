@@ -4,8 +4,7 @@ import store from './../store/store.js';
 import { connect } from 'react-redux';
 
 var VideoList = ({handleVideoListEntryTitleClick}) => {
-  let state = store.getState();
-  let { videos } = state;
+  let videos = store.getState().videos;
 
   return (
     <div className="video-list">

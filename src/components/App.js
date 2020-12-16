@@ -21,6 +21,9 @@ class App extends React.Component {
     store.dispatch(handleVideoSearch('Funny cats'));
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Shouldcomponentupdate
+
   handleVideoListEntryTitleClick(video) {
     store.dispatch({
       type: 'currentVideo',
