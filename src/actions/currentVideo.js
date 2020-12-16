@@ -1,5 +1,6 @@
 var changeVideo = (video) => ({
-  //TODO:  Return some action object to change the currently playing video.
+  type: 'currentVideo',
+  payload: video
 });
 
 export default changeVideo;

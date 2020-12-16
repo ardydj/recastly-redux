@@ -1,5 +1,6 @@
 var changeVideoList = (videos) => ({
-  //TODO:  Return some action object to change the list of videos in VideoList.
+    type: 'Fetched Data',
+    payload: videos
 });
 
 export default changeVideoList;

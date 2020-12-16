@@ -4,7 +4,7 @@ import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 
 import store from './../store/store.js';
-import getYouTubeVideos from './../lib/searchYouTube.js';
+import handleVideoSearch from './../actions/search.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    store.dispatch(getYouTubeVideos('Funny cats'));
+    store.dispatch(handleVideoSearch('Funny cats'));
   }
 
   handleVideoListEntryTitleClick(video) {
