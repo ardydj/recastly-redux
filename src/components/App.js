@@ -10,19 +10,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   videos: [],
-    //   currentVideo: null
-    // };
-
   }
 
   componentDidMount() {
-    store.dispatch(handleVideoSearch('Funny cats'));
+    console.log('dispatching funny cats');
+    store.dispatch(handleVideoSearch('funny cats'));
   }
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Shouldcomponentupdate
 
   handleVideoListEntryTitleClick(video) {
     store.dispatch({

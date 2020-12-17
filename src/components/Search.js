@@ -1,5 +1,7 @@
 import React from 'react';
-import getYoutubeVideos from './../lib/searchYouTube.js';
+import handleVideoSearch from './../actions/search.js';
+
+import store from './../store/store.js';
 
 class Search extends React.Component {
   constructor(props) {
@@ -11,10 +13,14 @@ class Search extends React.Component {
   }
 
   handleInputChange(e) {
-    getYouTubeVideos(e.target.value);
     this.setState({
       value: e.target.value
     });
+  }
+
+  handleSubmit(value) {
+    console.log('value:', value)
+    store.dispatch(handleVideoSearch(value));
   }
 
   render() {
@@ -26,7 +32,11 @@ class Search extends React.Component {
           value={this.state.value}
           onChange={this.handleInputChange.bind(this)}
         />
-        <button className="btn hidden-sm-down">
+        <button className="btn hidden-sm-down" onClick={(e) => {
+          console.log('context for THIS: ', this);
+          e.preventDefault();
+          this.handleSubmit(this.state.value);
+        }}>
           <span className="glyphicon glyphicon-search"></span>
         </button>
       </div>

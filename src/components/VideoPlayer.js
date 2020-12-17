@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 var VideoPlayer = () => {
   let currentVideo = store.getState().currentVideo;
 
-  if (currentVideo.videoId === undefined) {
+  if (currentVideo.id === undefined) {
     return (
       <div className="video-player">Please wait...</div>
       )
